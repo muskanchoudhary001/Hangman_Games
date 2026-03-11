@@ -1,44 +1,91 @@
-Hangman Game
+# Hangman Game (HTML/CSS/JavaScript)
 
-A responsive Hangman game built with HTML, CSS, and JavaScript. In this game, the user has to guess all the letters of a randomly generated word within a given number of tries. Each incorrect guess results in a part of the hangman illustration appearing on the gallows.
-Table of Contents
+A modern, responsive Hangman game built with **vanilla HTML, CSS, and JavaScript**. Guess the hidden word one letter at a time—make too many wrong guesses and the hangman completes.
 
-    Features
-    Installation
-    Usage
-    Contributing
-    License
+## Features
 
-Features
+- **Random word + hint** from a built-in word list
+- **On-screen keyboard** (disables letters after clicking)
+- **Hangman progression** using SVG stages (`images/hangman-0.svg` → `images/hangman-6.svg`)
+- **Win/Lose modal**
+  - **Win**: emojis + confetti celebration
+  - **Lose**: sad emojis + subtle shake animation
+- **Progress meter** showing wrong guesses (fills as you miss)
+- **Responsive UI** for mobile and desktop
 
-    Randomly generated words for each game session.
-    Visual feedback for correct and incorrect guesses.
-    Progressive hangman illustration for incorrect guesses.
-    Responsive design for various screen sizes.
-    Simple and intuitive user interface.
+## Tech Stack
 
-Installation
+- **HTML**: `index.html`
+- **CSS**: `style.css`
+- **JavaScript**: `scripts/script.js`
 
-To get a local copy up and running, follow these steps:
+No frameworks. No build step.
 
-    Clone the repository:
+## Project Structure
 
-    sh
+```text
+HANGMAN_GAME/
+  index.html
+  style.css
+  scripts/
+    script.js
+    word-list.js
+  images/
+    hangman-0.svg
+    hangman-1.svg
+    hangman-2.svg
+    hangman-3.svg
+    hangman-4.svg
+    hangman-5.svg
+    hangman-6.svg
+```
 
-git clone https://github.com/your-username/Hangman-Games.git
+## Requirements
 
-Open the project directory:
+- Any modern browser (Chrome / Edge / Firefox)
 
-sh
+## Run Locally
 
-    cd Hangman-Games
+### Option 1: Open the file directly
 
-    Open the index.html file in your browser to start the game.
+1. Open `index.html` in your browser.
 
-Usage
+### Option 2 (Recommended): Run a local server
 
-    Open the game in your browser.
-    Start guessing the word by clicking on the letters or typing them.
-    Each correct guess reveals the letter in the word.
-    Each incorrect guess adds a part to the hangman illustration.
-    The game ends when you either guess the word correctly or the hangman is fully drawn.
+Some browsers restrict certain behaviors when opening files directly. Using a local server is more reliable.
+
+#### Using VS Code / Cursor Live Server
+
+1. Install the **Live Server** extension
+2. Right-click `index.html` → **Open with Live Server**
+
+#### Using Python (if installed)
+
+From the project folder:
+
+```bash
+python -m http.server 5500
+```
+
+Then open:
+
+- `http://localhost:5500`
+
+## How to Play
+
+1. Look at the **hint**
+2. Click letters on the keyboard
+3. You have **6** wrong guesses
+4. Win by revealing all letters before you run out of guesses
+
+## Customize Words
+
+Edit `scripts/word-list.js` and add more entries:
+
+```js
+{ word: "example", hint: "Your hint here." }
+```
+
+## Credits
+
+- Hangman SVG stages are used from the `images/` folder included in this project.
